@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WebGraph</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+	</script>
+	<script
+		src="js/mainChart.js" defer>
+	</script>
+</head>
+
+<body>
+<div class = "grid-container">
+
+	<div class="header" id="">
+	WebGraph v1.0.0
+	</div>
+	
+	<div class="left" id="">
+		<form>
+		<h4>X Axis Parameters</h4>
+		<table>
+		<tr>
+		<td><label for="xGrid">X Interval: </label></td>
+		<td><input type="text" name="xGrid" value="0.5" id="xGrid" maxlength="10" /></td>
+		</tr><tr>
+		<td><label for="xMin">X Start: </label></td>
+		<td><input type="text" name="xMin" value="0" id="xMin" maxlength="10" /></td>
+		</tr><tr>
+		<td><label for="xMax">X End: </label></td>
+		<td><input type="text" name="xMax" value="10" id="xMax" maxlength="10" /></td>
+		</tr>
+		</table><hr/>
+		
+		<input type="button" name="" id="sin" value="SIN" />&nbsp;&nbsp;&nbsp;
+		<input type="button" name="" id="square" value="SQUARE" />
+		</form>
+	</div>
+
+	<div class="right" id="">
+		<canvas id="webChart" style="width:100%;"></canvas>
+	</div>
+
+	<div class="footer" id="">
+		<p>By Mark Foyster 2022 under GNU GPL License. Copy, share, do what you like, but don't blame me :-D</p>
+		<p>Source available on GitHub at <a href="https://github.com/mxfoyster/WebGraph">https://github.com/mxfoyster/WebGraph</a></p>
+	</div>
+
+</div>
+
+
+
+
+</body>
+</html>
