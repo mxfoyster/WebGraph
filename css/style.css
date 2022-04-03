@@ -23,6 +23,15 @@ body {
   font-size: 35px;
 }
 
+.numbers{
+	width: 5em;
+	align: left;
+}
+
+.leftCell{
+	text-align: right;
+}
+
 /* The grid container */
 .grid-container {
   opacity: 0.95;
@@ -35,7 +44,6 @@ body {
 } 
 
 .left,
-.middle,
 .right {
   padding: 10px;
  
@@ -45,11 +53,6 @@ body {
 .left {
   grid-area: left;
   text-align: center;
-}
-
-/* Style the middle column */
-.middle {
-  grid-area: middle;
 }
 
 /* Style the right column */
