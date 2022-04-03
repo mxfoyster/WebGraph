@@ -4,11 +4,26 @@ const xMin = document.getElementById("xMin");
 const xMax = document.getElementById("xMax");
 const lineColor = document.getElementById("lineColor");
 
+var webchart; //our handle for the chart we assign later. Declaring it here keeps it global
+
+//starting chart type
 graphFunction = "Math.sin(x)";
 chartLabel = "Chart of SIN(x)";
 
+//preset maths function button listeners
 document.getElementById("sin").addEventListener("click", sin);
+document.getElementById("cos").addEventListener("click", cos);
+document.getElementById("tan").addEventListener("click", tan);
 document.getElementById("square").addEventListener("click", square);
+document.getElementById("cube").addEventListener("click", cube);
+document.getElementById("invX").addEventListener("click", xInverted);
+
+//Aspect ratio button listeners and inline functions
+document.getElementById("aspTwo").addEventListener("click", function(){reSize(2)});
+document.getElementById("aspOne").addEventListener("click", function(){reSize(1)});
+document.getElementById("aspHalf").addEventListener("click", function(){reSize(0.5)});
+
+
 var xValues = [];
 var yValues = [];
 
@@ -23,10 +38,37 @@ function sin()
 	checkThenPlot();
 }
 
+function cos()
+{
+	chartLabel = "Chart of COS(x)";
+	graphFunction = "Math.cos(x)";
+	checkThenPlot();
+}
+
+function tan()
+{
+	chartLabel = "Chart of TAN(x)";
+	graphFunction = "Math.tan(x)";
+	checkThenPlot();
+}
+
 function square()
 {
 	chartLabel = "Chart of x^2";
 	graphFunction = "x*x";
+	checkThenPlot();
+}
+function cube()
+{
+	chartLabel = "Chart of x^3";
+	graphFunction = "x*x*x";
+	checkThenPlot();
+}
+
+function xInverted()
+{
+	chartLabel = "Chart of 1/x";
+	graphFunction = "1/x";
 	checkThenPlot();
 }
 
@@ -40,7 +82,7 @@ function rePlot()
 //this is the plotting code
 function plotChart()
 {
-	new Chart("webChart", 
+	webChart = new Chart("webChart", 
 	{
 		type: "line",
 		data: 
@@ -96,4 +138,12 @@ function checkThenPlot()
 		  return;
 	}
 	 rePlot(); //If we made it this far, we're OK to plot
+}
+
+// to resize the chart according to the selected aspect ratio
+function reSize(size)
+{
+	webChart.aspectRatio = size;
+	webChart.resize();
+	checkThenPlot(); //We have to plot again otherwise sometimes it defaults to initial chart for some reason
 }

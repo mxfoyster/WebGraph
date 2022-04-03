@@ -39,14 +39,32 @@
 		<td><input type="text" class="numbers" name="xMax" value="10" id="xMax" maxlength="10" onchange="checkThenPlot()"/></td>
 		</tr>
 		</table><hr/>
+		<h4>Standard Functions</h4>
+		<table>
+		<tr>
+		<td><input type="button" class="preDefFunc" name="" id="sin" value="SIN" /></td>
+		<td><input type="button" class="preDefFunc" name="" id="square" value="SQUARE" /></td>
+		</tr><tr>
+		<td><input type="button" class="preDefFunc" name="" id="cos" value="COS" /></td>
+		<td><input type="button" class="preDefFunc" name="" id="cube" value="CUBE" /></td>
+		</tr><tr>
+		<td><input type="button" class="preDefFunc" name="" id="tan" value="TAN" /></td>
+		<td><input type="button" class="preDefFunc" name="" id="invX" value="1/X" /></td>
+		</tr>
+		</table>
+		<hr/>
+		<h4>Aspect Ratio</h4>
 		
-		<input type="button" name="" id="sin" value="SIN" />&nbsp;&nbsp;&nbsp;
-		<input type="button" name="" id="square" value="SQUARE" />
+		<input type="button" class="aspBtns" name="" id="aspTwo" value="2:1" />&nbsp;
+		<input type="button" class="aspBtns" name="" id="aspOne" value="1:1" />&nbsp;
+		<input type="button" class="aspBtns" name="" id="aspHalf" value="1:2" />
+		
+		
 		</form>
 	</div>
 
 	<div class="right" id="">
-		<canvas id="webChart" style="width:100%;"></canvas>
+		<canvas id="webChart"></canvas>
 	</div>
 
 	<div class="footer" id="">
