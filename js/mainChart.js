@@ -20,14 +20,14 @@ function sin()
 {
 	chartLabel = "Chart of SIN(x)";
 	graphFunction = "Math.sin(x)";
-	rePlot();
+	checkThenPlot();
 }
 
 function square()
 {
 	chartLabel = "Chart of x^2";
 	graphFunction = "x*x";
-	rePlot();
+	checkThenPlot();
 }
 
 //This is what we call to re-plot our chart when user prompts us to
@@ -70,13 +70,30 @@ function generateData(value, i1, i2, step = 1)
 //gets the values from the colour picker and builds them into an rgba value for chart.js
 function hexToNum()
   {
-	  var lineColorDec = [];
-	  for (i=0; i<3; i++)//for each colour channel
-	  {
+	var lineColorDec = [];	
+	for (i=0; i<3; i++)//for each colour channel
+	{
 		lineColorDec[i] = lineColor.value.slice((i+i+1),(i+i+3));  //cut out the this channel
 		lineColorDec[i] = parseInt(lineColorDec[i],16);//convert from hex to decimal
-	  }
-	  //build the string
-	  var rgbaString = "rgba(" + lineColorDec[0] + "," +  lineColorDec[1] + "," + lineColorDec[2] +",1)";
-	  return rgbaString;//return it
+	}
+	//build the string
+	var rgbaString = "rgba(" + lineColorDec[0] + "," +  lineColorDec[1] + "," + lineColorDec[2] +",1)";
+	return rgbaString;//return it
   }
+  
+//we can check our 'X Axis Parameters' here before we plot
+function checkThenPlot()
+{
+	if (xGrid.value <= 0)
+	{
+		  alert ("Sorry, you must enter a positive number for 'X Interval'");
+		  return;
+	}
+	  
+	  if (xMin.value >= xMax.value)
+	{
+		  alert ("Sorry, 'X Start' must be smaller than 'X End'");
+		  return;
+	}
+	 rePlot(); //If we made it this far, we're OK to plot
+}

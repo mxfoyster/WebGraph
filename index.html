@@ -27,16 +27,16 @@
 		<table>
 		<tr>
 		<td class="leftCell"><label for="lineColor">Line Colour:</label></td>
-		<td><input type="color"  class="numbers" id="lineColor" name="favcolor" value="#ff0000" oninput="rePlot()"></td>
+		<td><input type="color"  class="numbers" id="lineColor" name="favcolor" value="#ff0000" onchange="checkThenPlot()"></td>
 		</tr><tr>
 		<td class="leftCell"><label for="xGrid">X Interval: </label></td>
-		<td><input type="text" class="numbers" name="xGrid" value="0.5" id="xGrid" maxlength="10" oninput="rePlot()"/></td>
+		<td><input type="text" class="numbers" name="xGrid" value="0.5" id="xGrid" maxlength="10" onchange="checkThenPlot()"/></td>
 		</tr><tr>
 		<td class="leftCell"><label for="xMin">X Start: </label></td>
-		<td><input type="text" class="numbers" name="xMin" value="0" id="xMin" maxlength="10" oninput="rePlot()"/></td>
+		<td><input type="text" class="numbers" name="xMin" value="0" id="xMin" maxlength="10" onchange="checkThenPlot()"/></td>
 		</tr><tr>
 		<td class="leftCell"><label for="xMax">X End: </label></td>
-		<td><input type="text" class="numbers" name="xMax" value="10" id="xMax" maxlength="10" oninput="rePlot()"/></td>
+		<td><input type="text" class="numbers" name="xMax" value="10" id="xMax" maxlength="10" onchange="checkThenPlot()"/></td>
 		</tr>
 		</table><hr/>
 		
