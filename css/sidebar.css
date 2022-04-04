@@ -1,0 +1,79 @@
+/*Stylesheet for side bar*/
+
+input
+{
+	text-align: center;
+}
+
+/*the pre defined function buttons style*/
+.preDefFunc
+{
+	margin: 0.5em;
+	width: 6rem;
+}
+
+/*Aspect Ratio Buttons*/
+.aspBtns
+{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	width: 4rem;
+}
+
+/*The left cell of our x-axis parameters */
+.leftCell
+{
+	text-align: right;
+}
+
+/*The number inputs for x-axis parameters*/
+.numbers
+{
+	width: 5em;
+	align: left;
+}
+
+/*The whole form */
+.formBox
+{
+	border-left-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-width: 2px;
+	max-width : 270px;
+}
+
+/*Heading for each node*/
+.panelHeading
+{
+	background-color:lightgray;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 2px;
+}
+
+/*Values boxes for straight line formula*/
+.straightLineVal
+{
+	width: 4em;
+}
+
+/*+/- box*/
+.signBox
+{
+	width: 2em;
+}
+
+/*Our table for formula builder*/
+.formulaBox
+{
+	margin: auto;
+}
+
+@media (max-width: 800px) 
+{
+	.formBox
+	{
+		display: inline-block;
+	}
+}

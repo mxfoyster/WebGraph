@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/sidebar.css" />
 
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
@@ -22,8 +23,8 @@
 	</div>
 	
 	<div class="left" id="">
-		<form>
-		<h4>X Axis Parameters</h4>
+		<form class="formBox">
+		<div class="panelHeading">X Axis Parameters</div>
 		<table>
 		<tr>
 		<td class="leftCell"><label for="lineColor">Line Colour:</label></td>
@@ -38,8 +39,9 @@
 		<td class="leftCell"><label for="xMax">X End: </label></td>
 		<td><input type="text" class="numbers" name="xMax" value="10" id="xMax" maxlength="10" onchange="checkThenPlot()"/></td>
 		</tr>
-		</table><hr/>
-		<h4>Standard Functions</h4>
+		</table>
+		
+		<div class="panelHeading">Standard Functions</div>
 		<table>
 		<tr>
 		<td><input type="button" class="preDefFunc" name="" id="sin" value="SIN" /></td>
@@ -52,14 +54,26 @@
 		<td><input type="button" class="preDefFunc" name="" id="invX" value="1/X" /></td>
 		</tr>
 		</table>
-		<hr/>
-		<h4>Aspect Ratio</h4>
 		
+		<div class="panelHeading">Aspect Ratio</div>
 		<input type="button" class="aspBtns" name="" id="aspTwo" value="2:1" />&nbsp;
 		<input type="button" class="aspBtns" name="" id="aspOne" value="1:1" />&nbsp;
 		<input type="button" class="aspBtns" name="" id="aspHalf" value="1:2" />
 		
-		
+		<div class="panelHeading">Straight Line Builder</div>
+		<table class="formulaBox">
+		<tr>
+		<td></td> <td>m</td> <td></td> <td>&#177;</td> <td>c</td>
+		</tr><tr>
+		<td>y =</td>
+		<td><input type="text" class="straightLineVal" id="mValLine" maxlength="4" value="1"/></td>
+		<td>x</td>
+		<td><input type="text" class="signBox" id="lineSign" maxlength="4" value="+"/></td>
+		<td><input type="text" class="straightLineVal" id="cValLine" maxlength="4" value="0"/></td>
+		</tr><tr>
+		<td colspan=5><input type="button" name="" id="straightPlot" value="PLOT" /></td>
+		</tr>
+		</table>
 		</form>
 	</div>
 

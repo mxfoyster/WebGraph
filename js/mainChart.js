@@ -4,6 +4,10 @@ const xMin = document.getElementById("xMin");
 const xMax = document.getElementById("xMax");
 const lineColor = document.getElementById("lineColor");
 
+const mValLine = document.getElementById("mValLine");
+const lineSign = document.getElementById("lineSign");
+const cValLine = document.getElementById("cValLine");
+
 var webchart; //our handle for the chart we assign later. Declaring it here keeps it global
 
 //starting chart type
@@ -17,6 +21,7 @@ document.getElementById("tan").addEventListener("click", tan);
 document.getElementById("square").addEventListener("click", square);
 document.getElementById("cube").addEventListener("click", cube);
 document.getElementById("invX").addEventListener("click", xInverted);
+document.getElementById("straightPlot").addEventListener("click", straightLine);
 
 //Aspect ratio button listeners and inline functions
 document.getElementById("aspTwo").addEventListener("click", function(){reSize(2)});
@@ -69,6 +74,24 @@ function xInverted()
 {
 	chartLabel = "Chart of 1/x";
 	graphFunction = "1/x";
+	checkThenPlot();
+}
+
+function straightLine()
+{
+	if(isNaN(mValLine.value)||isNaN(cValLine.value))
+	{
+		alert ("Sorry, 'm' and 'c' must be valid numbers");
+		return;
+	}
+	if(lineSign.value!="+" && lineSign.value!="-")
+	{
+		alert ("Sorry, \u00B1 box must contain '+' or '-'");
+		return;
+	}
+	chartLabel = "Chart of y = " + mValLine.value + " * x + " + cValLine.value;
+	graphFunction = mValLine.value + "*x" + lineSign.value + cValLine.value;
+	console.log (graphFunction);
 	checkThenPlot();
 }
 
